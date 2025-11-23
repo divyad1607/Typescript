@@ -25,3 +25,44 @@ interface Bottle{
 }
 
 //identityFour<Bottle>({})
+
+function getSearchProducts<T>(products: T[]):T{
+    // do some database operation
+    const myIndex = 3
+    return products[myIndex]
+}
+
+const getMoreSearchProducts = <T>(products: T[]): T => {
+    //do some database operations
+    const myIndex = 4
+    return products[myIndex]
+}
+
+
+function anotherFunction<T, U extends number>(valOne:T, valTwo:U): object {
+    return {
+        valOne,
+        valTwo
+    }
+}
+
+//anotherFunction(3, "4")
+
+interface Quiz{
+    name: string,
+    type: string
+}
+
+interface Course{
+    name: string,
+    author: string,
+    subject: string
+}
+
+class Sellable<T>{
+    public cart: T[] = []
+
+    addToCart(products: T){
+        this.cart.push(products)
+    }
+}
